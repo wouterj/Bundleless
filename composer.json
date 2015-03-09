@@ -1,0 +1,16 @@
+{
+    "name": "wouterj/bundleless",
+    "description": "Removing the bundle from AppBundle in Symfony",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wouter J",
+            "email": "wouter@wouterj.nl"
+        }
+    ],
+
+    "require": {
+        "symfony/http-foundation": "~2.3"
+    },
+    "minimum-stability": "stable"
+}
