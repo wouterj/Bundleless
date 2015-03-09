@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace WouterJ\Bundleless\Bundle;
+namespace WouterJ\Bundleless;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class Virtual extends Bundle
+class BundleVirtual extends Bundle
 {
     protected $path;
     protected $namespace;

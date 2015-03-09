@@ -11,7 +11,6 @@
 
 namespace WouterJ\Bundleless;
 
-use WouterJ\Bundleless\Bundle\Virtual as VirtualBundle;
 use Symfony\Component\HttpKernel\Kernel;
 
 /**
