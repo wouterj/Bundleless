@@ -1,4 +1,4 @@
-# Symfony without a Bundle, welcome to Bundleless
+# Symfony without a Bundle? Welcome to Bundleless!
 
 This is a very simple proof of concept. This package basically provides a bundle
 class which can be used to create "virtual" bundles. Virtual bundles only
