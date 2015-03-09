@@ -48,8 +48,8 @@ public function registerBundles()
 ## Use
 
 You're already ready! You should move your application code outside of the
-`AppKernel` bundle by removing the namespace and putting it in `src/` directly.
-For instance:
+`AppBundle` by removing the namespace and putting it in `src/` directly. For
+instance:
 
 ```php
 // src/Controller/StaticController.php
