@@ -13,7 +13,7 @@ namespace WouterJ\Bundleless;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class BundleVirtual extends Bundle
+class VirtualBundle extends Bundle
 {
     protected $path;
     protected $namespace;
