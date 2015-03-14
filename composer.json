@@ -10,7 +10,7 @@
     ],
 
     "require": {
-        "symfony/http-foundation": "~2.3"
+        "symfony/http-kernel": "~2.3"
     },
     "minimum-stability": "stable",
     
