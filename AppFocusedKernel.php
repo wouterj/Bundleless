@@ -68,7 +68,7 @@ abstract class AppFocusedKernel extends Kernel
                             'mappings' => array(
                                 'App' => array(
                                     'type' => 'annotation',
-                                    'prefix' => $this->appNamespace.'\Entity',
+                                    'prefix' => $this->appNamespace ? $this->appNamespace.'\Entity' : 'Entity',
                                     'dir' => $this->appPath.'/Entity',
                                 ),
                             ),
