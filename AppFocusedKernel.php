@@ -12,6 +12,7 @@
 namespace WouterJ\Bundleless;
 
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * A base kernel that automatically registers an App virtual bundle.
@@ -51,5 +52,30 @@ abstract class AppFocusedKernel extends Kernel
 
         $this->bundles['App'] = $bundle = new VirtualBundle('App', $this->appPath, $this->appNamespace);
         $this->bundleMap['App'] = array($bundle);
+    }
+    
+    protected function prepareContainer(ContainerBuilder $container)
+    {
+        parent::prepareContainer($container);
+
+        $bundles = $container->getParameter('kernel.bundles');
+
+        foreach ($bundles as $name => $fqcn) {
+            switch ($name) {
+                case 'DoctrineBundle':
+                    $container->loadFromExtension('doctrine', array(
+                        'orm' => array(
+                            'mappings' => array(
+                                'App' => array(
+                                    'type' => 'annotation',
+                                    'prefix' => $this->appNamespace ? $this->appNamespace.'\Entity' : 'Entity',
+                                    'dir' => $this->appPath.'/Entity',
+                                ),
+                            ),
+                        ),
+                    ));
+                    break;
+            }
+        }
     }
 }
