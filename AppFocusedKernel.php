@@ -77,5 +77,7 @@ abstract class AppFocusedKernel extends Kernel
                     break;
             }
         }
+
+        $container->setParameter('controller_name_converter.class', 'WouterJ\Bundleless\Controller\ControllerNameParser');
     }
 }
