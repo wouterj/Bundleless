@@ -21,36 +21,16 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 abstract class AppFocusedKernel extends Kernel
 {
-    /**
-     * The path to the directory containing the application code.
-     *
-     * This defaults to src/ in the root of the application
-     */
-    protected $appPath;
-
-    /**
-     * The namespace prefix for the application code.
-     *
-     * This defaults to an empty string, meaning no prefix.
-     */
-    protected $appNamespace = '';
-
-    public function __construct($environment, $debug)
+    protected function getAppBundle()
     {
-        parent::__construct($environment, $debug);
-
-        if (!$this->appPath) {
-            $this->appPath = realpath($this->getRootDir().'/../src');
-        } else {
-            $this->appPath = str_replace('%kernel.root_dir%', $this->getRootDir(), $this->appPath);
-        }
+        return new VirtualBundle('App', realpath($this->getRootDir().'/../src'), 'App');
     }
 
     protected function initializeBundles()
     {
         parent::initializeBundles();
 
-        $this->bundles['App'] = $bundle = new VirtualBundle('App', $this->appPath, $this->appNamespace);
+        $this->bundles['App'] = $bundle = $this->getAppBundle();
         $this->bundleMap['App'] = array($bundle);
     }
     
