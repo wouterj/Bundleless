@@ -81,13 +81,8 @@ That's it. Apart from the template file, you now have a working homepage!
 
 ## Customize
 
-You can customize 2 things in your `AppKernel` by defining properties:
-
-* `$appPath` (default: `%kernel.root_dir%/../src`): The root path for your
-  application code. You can use the familair `%kernel.root_dir%` parameter;
-
-* `$appNamespace` (default: `''`): The root namespace of your application code.
-  You might want to set this to `App` to avoid naming conflicts.
+The AppBundle is created using the `Kernel#getAppBundle()` method. Override
+this method in your `AppKernel` to customize it.
 
 ## License
 
