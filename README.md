@@ -53,7 +53,7 @@ instance:
 
 ```php
 // src/Controller/StaticController.php
-namespace Controller;
+namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
